@@ -1,0 +1,34 @@
+<div class="modal-header">
+  <h4 class="modal-title">Scegli il nome utente</h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="ngbActiveModal.dismiss()"
+  ></button>
+</div>
+<div class="modal-body">
+  <form>
+    <div class="mb-3">
+      <label for="userName">Nome utente</label>
+      <div class="input-group">
+        <input
+          class="form-control"
+          placeholder="Nome utente"
+          name="userName"
+          [(ngModel)]="userName"
+        />
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    [disabled]="!userName"
+    (click)="ngbActiveModal.close(userName)"
+  >
+    OK
+  </button>
+</div>

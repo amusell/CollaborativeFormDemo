@@ -1,0 +1,26 @@
+{
+    "dossier": {
+        "82ac9787-7872-471e-b8a7-7fa5b7fb1ec8": {
+            "userId": "test",
+            "creationDt": "2023-06-18T20:22:17.866Z",
+            "section": {
+                "dati-anagrafici": {
+                    "firstName": "Marco",
+                    "lastName": "Ricupero",
+                    "birthDate": "1986-02-18"
+                },
+                "occupazione": {
+                    "jobType": "employee"
+                }
+            }
+        },
+        "b2c5805f-27a6-42be-9671-40bd02befa72": {
+            "userId": "test",
+            "creationDt": "2023-06-19T20:12:21.726Z"
+        },
+        "489cf6ce-d5b6-475a-ba7f-e039728465a8": {
+            "userId": "test",
+            "creationDt": "2023-06-19T20:12:28.957Z"
+        }
+    }
+}

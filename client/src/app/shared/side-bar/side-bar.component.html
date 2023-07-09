@@ -1,0 +1,20 @@
+<div class="side-bar">
+  <div
+    class="nav flex-column nav-pills me-3"
+    role="tablist"
+    aria-orientation="vertical"
+  >
+    <a
+      class="nav-link"
+      *ngFor="let item of items"
+      data-bs-toggle="pill"
+      type="button"
+      role="tab"
+      aria-controls="v-pills-home"
+      [routerLink]="[item.slug]"
+      routerLinkActive="active"
+    >
+      {{ item.label }}
+    </a>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<form class="row g-3" [formGroup]="form" *ngIf="form && config">
+  <div
+    class="col-12 p-4"
+    *ngFor="let field of config?.fields"
+    [ngSwitch]="field?.type"
+  >
+    <div class="form-floating">
+      <ng-container *ngSwitchCase="'select'">
+        <select
+          formControlName="{{ field?.name }}"
+          class="form-select"
+          name="{{ field?.name }}"
+          [attr.aria-label]="field?.name"
+        >
+          <option selected disabled hidden value="">
+            {{ field?.placeholder }}
+          </option>
+          <option *ngFor="let option of field?.options" [value]="option?.value">
+            {{ option?.label }}
+          </option>
+        </select>
+      </ng-container>
+      <ng-container *ngSwitchDefault>
+        <input
+          formControlName="{{ field?.name }}"
+          type="{{ field?.type }}"
+          class="form-control"
+          name="{{ field?.name }}"
+          placeholder="{{ field?.placeholder }}"
+        />
+      </ng-container>
+      <ng-container *ngSwitchCase="'textarea'">
+        <textarea
+          formControlName="{{ field?.name }}"
+          class="form-control"
+          placeholder="{{ field?.placeholder }}"
+          name="{{ field?.name }}"
+        ></textarea>
+      </ng-container>
+      <label for="{{ field?.name }}">{{ field?.label }}</label>
+    </div>
+  </div>
+</form>

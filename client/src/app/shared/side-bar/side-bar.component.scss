@@ -1,0 +1,14 @@
+.side-bar {
+  background-color: var(--bs-gray-200);
+  height: 100%;
+  .nav-pills {
+    width: 100%;
+  }
+  .nav-link {
+    border-radius: 0;
+    &:hover {
+      background-color: var(--bs-primary);
+      color: var(--bs-white);
+    }
+  }
+}

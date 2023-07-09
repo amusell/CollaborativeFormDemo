@@ -1,0 +1,13 @@
+<form [formGroup]="form">
+  <dyn-form [config]="formConfig$ | async"></dyn-form>
+</form>
+<div class="button__bar">
+  <button
+    type="button"
+    class="btn btn-primary"
+    [disabled]="form.invalid || (form.pristine && form.untouched)"
+    (click)="save()"
+  >
+    Salva
+  </button>
+</div>
