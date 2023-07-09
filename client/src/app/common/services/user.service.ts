@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { v4 as uuid } from 'uuid';
+import { CollaborativeFormService } from './collaborative-form.service';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
@@ -14,14 +15,21 @@ export class UserService {
         userName,
         uuid: uuid(),
       };
-
+      this.collaborativeFormService.connection.setUser({
+        userId: session.uuid,
+        userName: session.userName,
+      });
       this.session = session;
       sessionStorage.setItem('user', JSON.stringify(session));
     }
   }
 
-  constructor() {
+  constructor(private collaborativeFormService: CollaborativeFormService) {
     this.session = JSON.parse(sessionStorage.getItem('user') || 'null');
+    this.collaborativeFormService.connection.setUser({
+      userId: this.session?.uuid || '',
+      userName: this.session?.userName || '',
+    });
   }
 
   public getHeader(): { [key: string]: string } {
