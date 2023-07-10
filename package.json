@@ -2,14 +2,18 @@
 	"name": "collaborative-form-demo",
 	"authors": "Marco Ricupero <m.ricupero@avanade.com>",
 	"private": true,
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"scripts": {
-		"preinstall": "cd client & npm i & cd ../backend & npm i",
+		"postinstall": "cd client & npm i & cd ../backend & npm i",
 		"start-fe": "cd client && npm start",
 		"start-be": "cd backend && npm start",
-		"start": "concurrently --kill-others npm:start-fe npm:start-be"
+		"start-socket": "cd node_modules/collaborative-form-server & npm start",
+		"start": "concurrently --kill-others npm:start-fe npm:start-be npm:start-socket"
 	},
 	"devDependencies": {
 		"concurrently": "^8.2.0"
+	},
+	"dependencies": {
+		"collaborative-form-server": "github:amusell/CollaboritiveFormServer"
 	}
 }
