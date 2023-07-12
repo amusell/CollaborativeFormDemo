@@ -5,7 +5,7 @@
 	"version": "1.0.0",
 	"scripts": {
 		"preinstall": "cd client & npm i & cd ../backend & npm i",
-		"start-fe": "cd client && npm start",
+		"start-fe": "cd client && npm start -- -o",
 		"start-be": "cd backend && npm start",
 		"start": "concurrently --kill-others npm:start-fe npm:start-be"
 	},
